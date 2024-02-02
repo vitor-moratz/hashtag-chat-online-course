@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Trench';
   font-weight: 400;
-  src: url('./assets/trench100free.otf');
+  src: url('/public/assets/trench100free.otf');
 }
 
 :root {
@@ -25,16 +25,17 @@ body {
 
 header {
   font-family: 'Trench';
-  background-color: #040e29;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   padding: 1rem 0;
-  font-size: 1.4rem;
   & > img {
-    max-height: 3rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    max-height: 5rem;
     margin-right: 0.2rem;
   }
 }
@@ -59,7 +60,7 @@ main {
 }
 
 .mensagem {
-  background-color: #040e29;
+  background-color: #2b2b2b;
   color: #fff;
   width: 85%;
   margin: 1rem 0.5rem;
@@ -68,7 +69,7 @@ main {
 }
 
 #mensagens > .mensagem:last-of-type {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 #envio-mensagens {
@@ -87,14 +88,14 @@ main {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background-color: #040e29;
+    background-color: #181818;
     color: #fff;
     padding: 0.8rem;
     border: none;
     border-radius: 12px;
     margin-left: 0.5rem;
     &:hover {
-      background-color: #0b266f;
+      background-color: #000000;
     }
   }
 }
