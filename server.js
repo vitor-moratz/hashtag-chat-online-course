@@ -3,7 +3,12 @@ const express = require("express");
 const app = express();
 
 const server = http.createServer(app);
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: ["https://hashtag-chat-online-course.vercel.app"],
+    methods: ["GET", "POST"]
+  }
+});
 
 app.use(express.static("public"));
 
@@ -12,6 +17,10 @@ io.on("connection", (socket) => {
 
   socket.on("nova mensagem", (msg) => {
     io.emit("nova mensagem", msg);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Um usuário desconectou");
   });
 });
 
