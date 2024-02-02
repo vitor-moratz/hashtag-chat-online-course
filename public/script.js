@@ -2,7 +2,7 @@ const botaoEnviar = document.getElementById("enviar");
 const texto = document.getElementById("texto");
 const chat = document.getElementById("mensagens");
 
-const socket = io("https://hashtag-chat-online-course.vercel.app");
+const socket = io("");
 
 botaoEnviar.addEventListener("click", () => {
   if (texto.value !== "") {
