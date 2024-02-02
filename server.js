@@ -1,14 +1,17 @@
 const http = require("http");
 const express = require("express");
-const configurarSocketIO = require("./public/script.js");
-
 const app = express();
+
 const servidorHTTP = http.createServer(app);
+const io = require("socket.io")(servidorHTTP);
 
 app.use(express.static("public"));
 
-const io = configurarSocketIO(servidorHTTP);
-
-servidorHTTP.listen(2000, () => {
-  console.log("Servidor escutando na porta 2000");
+io.addListener("connection", (socket) => {
+  console.log("um usuário acabou de conectar");
+  socket.addListener("nova mensagem", (msg) => {
+    io.emit("nova mensagem", msg);
+  });
 });
+
+servidorHTTP.listen(2000);
